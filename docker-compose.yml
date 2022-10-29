@@ -68,6 +68,15 @@ services:
         networks:
             - laravel-9
 
+    #mailhog
+    mailhog:
+        container_name: horizon-mailhog
+        image: mailhog/mailhog
+        ports:
+            - "1025:1025" #server smtp
+            - "8025:8025" # porta web
+        networks:
+            - laravel-9
 networks:
     laravel-9:
         driver: bridge
